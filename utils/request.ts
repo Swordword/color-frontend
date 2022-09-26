@@ -2,8 +2,10 @@ import axios from 'axios'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
+console.log('isDevelopment', isDevelopment)
+
 const instance = axios.create({
-  baseURL: isDevelopment ? 'http://127.0.0.1:8080/v1' : '',
+  baseURL: isDevelopment ? '/api' : '',
   withCredentials: true,
   timeout: 80 * 1000,
 })
