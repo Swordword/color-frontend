@@ -1,11 +1,20 @@
-import * as React from 'react'
+import { useEffect } from 'react'
 import type { NextPage } from 'next'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
+import request from '../utils/request'
 // import Link from '../components/Link'
 
-
 const Home: NextPage = () => {
+  const loadData = async () => {
+    const res = await request({
+      url: 'color',
+    })
+    console.log('111', res)
+  }
+  useEffect(() => {
+    loadData()
+  }, [])
   return (
     <Container maxWidth='lg'>
       <Box
@@ -15,7 +24,7 @@ const Home: NextPage = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}
-      ></Box>
+      >111</Box>
     </Container>
   )
 }
