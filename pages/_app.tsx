@@ -4,7 +4,7 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
-import theme from '../config/theme'
+import { theme, outerTheme, innerTheme } from '../config/theme'
 import createEmotionCache from '../config/createEmotionCache'
 import Layout from '../layout/Pager'
 
