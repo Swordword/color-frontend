@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import type { NextPage } from 'next'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
-import request from '../utils/request'
+// import request from '../utils/request'
 import Button from '@mui/material/Button'
 import { ThemeProvider, useTheme } from '@mui/material/styles'
 import { outerTheme, innerTheme } from '../config/theme'
@@ -11,20 +11,9 @@ import Checkbox from '@mui/material/Checkbox'
 
 const Home: NextPage = () => {
   const theme = useTheme()
-  // const loadData = async () => {
-  //   const res = await request({
-  //     url: 'color',
-  //   })
-  //   console.log('111', res)
-  // }
-  // useEffect(() => {
-  //   loadData()
-  // }, [])
+
   return (
     <Container maxWidth='lg'>
-      <Box>
-        <span>{`span ${theme.spacing}`}</span>
-      </Box>
       <Box
         sx={{
           display: 'flex',
@@ -34,8 +23,8 @@ const Home: NextPage = () => {
         }}
       >
         <Button>primart button</Button>
-        <Button variant={'contained'}>contained button</Button>
-        <Button variant={'outlined'}>outlined button</Button>
+        <Button variant='contained'>contained button</Button>
+        <Button variant='outlined'>outlined button</Button>
       </Box>
       <Box>
         <ThemeProvider theme={outerTheme}>

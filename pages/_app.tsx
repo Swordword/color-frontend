@@ -4,6 +4,7 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { theme, outerTheme, innerTheme } from '../config/theme'
 import createEmotionCache from '../config/createEmotionCache'
 import Layout from '../layout/Pager'
@@ -13,6 +14,8 @@ const clientSideEmotionCache = createEmotionCache()
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
+
+export const queryClient = new QueryClient()
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
@@ -24,7 +27,9 @@ export default function MyApp(props: MyAppProps) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Layout>
-          <Component {...pageProps} />
+          <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+          </QueryClientProvider>
         </Layout>
       </ThemeProvider>
     </CacheProvider>
