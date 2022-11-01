@@ -4,8 +4,10 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { theme, outerTheme, innerTheme } from '../config/theme'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+import { theme } from '../config/theme'
 import createEmotionCache from '../config/createEmotionCache'
 import Layout from '../layout/Pager'
 
@@ -29,6 +31,8 @@ export default function MyApp(props: MyAppProps) {
         <Layout>
           <QueryClientProvider client={queryClient}>
             <Component {...pageProps} />
+            {/* react-query devtools */}
+            <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
         </Layout>
       </ThemeProvider>

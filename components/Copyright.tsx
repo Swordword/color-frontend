@@ -13,7 +13,7 @@ export default function Copyright() {
       <MuiLink target='_blank' color='inherit' href={origin}>
         {origin}
       </MuiLink>
-      {new Date().getFullYear()}
+      {' ' + new Date().getFullYear()}
     </Typography>
   )
 }

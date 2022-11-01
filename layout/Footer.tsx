@@ -1,11 +1,11 @@
-import * as React from 'react'
+import { Box } from '@mui/material'
 import Copyright from '../components/Copyright'
 
 const Footer = () => {
   return (
-    <div>
+    <Box sx={{ marginTop: 'auto', padding: '20px 0' }}>
       <Copyright />
-    </div>
+    </Box>
   )
 }
 

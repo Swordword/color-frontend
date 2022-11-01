@@ -23,7 +23,7 @@ interface ResponseData<T = any> {
 }
 
 const instance = axios.create({
-  baseURL: isDevelopment ? '/api' : '',
+  baseURL: isDevelopment ? '/api' : 'http://127.0.0.1:8080/v1/',
   withCredentials: true,
   timeout: 80 * 1000,
 })
