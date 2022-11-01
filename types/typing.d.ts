@@ -9,6 +9,8 @@ declare namespace COLOR_SPACE {
     UpdatedAt: DateTime
   }
 
+  export type NewColor = Omit<Color, 'id' | 'stars' | 'CreatedAt' | 'UpdatedAt'>
+
   export type Pager = {
     page: number
     pageSize: number

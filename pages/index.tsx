@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     }
   )
   if (isLoading) return <div>loading...</div>
-  if (error) return <div> error:{error}</div>
+  if (error) return <div> error </div>
   return (
     <>
       <Container

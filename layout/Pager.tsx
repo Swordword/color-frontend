@@ -1,10 +1,15 @@
-import { Box } from '@mui/material'
+import { Box, styled } from '@mui/material'
 import Header from './Header'
 import Footer from './Footer'
 
 interface IProps {
   children: React.ReactNode
 }
+
+const Container = styled(Box)({
+  maxWidth: '1200px',
+  margin: 'auto',
+})
 
 const Pager = ({ children }: IProps) => {
   return (
@@ -18,7 +23,8 @@ const Pager = ({ children }: IProps) => {
       }}
     >
       <Header />
-      {children}
+      <Container>{children}</Container>
+
       <Footer />
     </Box>
   )

@@ -7,6 +7,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
+import { IdentityContext } from '../config/identifyContext'
 import { theme } from '../config/theme'
 import createEmotionCache from '../config/createEmotionCache'
 import Layout from '../layout/Pager'
@@ -28,13 +29,15 @@ export default function MyApp(props: MyAppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout>
-          <QueryClientProvider client={queryClient}>
-            <Component {...pageProps} />
-            {/* react-query devtools */}
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </Layout>
+        <IdentityContext>
+          <Layout>
+            <QueryClientProvider client={queryClient}>
+              <Component {...pageProps} />
+              {/* react-query devtools */}
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+          </Layout>
+        </IdentityContext>
       </ThemeProvider>
     </CacheProvider>
   )
