@@ -20,7 +20,7 @@ export async function colorList(
  * 创建颜色
  * @param color
  */
-export async function createColor(color: Promise<COLOR_SPACE.NewColor>) {
+export async function createColor(color: COLOR_SPACE.NewColor) {
   return request({
     url: 'color',
     method: 'POST',

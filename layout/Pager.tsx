@@ -7,8 +7,9 @@ interface IProps {
 }
 
 const Container = styled(Box)({
-  maxWidth: '1200px',
-  margin: 'auto',
+  paddingTop: '30px'
+  // width: '1200px',
+  // margin: 'auto',
 })
 
 const Pager = ({ children }: IProps) => {

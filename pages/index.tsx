@@ -6,6 +6,7 @@ import Container from '@mui/material/Container'
 import { useQuery } from '@tanstack/react-query'
 import ColorList from '../components/ColorList'
 import { colorList } from '../services'
+import { useIdentityContext } from '../config/identifyContext'
 
 const defaultPager = {
   page: 1,
@@ -14,6 +15,7 @@ const defaultPager = {
 
 const Home: NextPage = () => {
   const [pager, setPager] = useState<COLOR_SPACE.Pager>(defaultPager)
+  const identifierId = useIdentityContext()
   const {
     data: list,
     isLoading,
@@ -29,11 +31,7 @@ const Home: NextPage = () => {
   if (error) return <div> error </div>
   return (
     <>
-      <Container
-        sx={{
-          padding: '20px',
-        }}
-      >
+      <Container>
         <ColorList colors={list!} />
       </Container>
     </>

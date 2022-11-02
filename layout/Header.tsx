@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Grid from '@mui/material/Unstable_Grid2'
 import Typography from '@mui/material/Typography'
 import { Box, Button, Container } from '@mui/material'
@@ -26,7 +27,13 @@ const Header = () => {
             alignItems: 'center',
           }}
         >
-          <Image src={palette} width={40} height={40} alt=''></Image>
+          <Link
+            href={{
+              pathname: '/',
+            }}
+          >
+            <Image src={palette} width={40} height={40} alt=''></Image>
+          </Link>
           <Typography
             sx={{
               ml: 1,
@@ -38,7 +45,9 @@ const Header = () => {
         </Grid>
 
         <Grid xs={4}>
-          <Button variant='contained'>Create Color Belonging to You❕</Button>
+          <Link href={{ pathname: '/create' }}>
+            <Button variant='contained'>创建属于你的颜色❕</Button>
+          </Link>
         </Grid>
       </Grid>
       <Box
